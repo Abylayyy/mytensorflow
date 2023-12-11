@@ -1,3 +1,6 @@
 package kz.abylay.mytensorflowapplication.domain
 
-data class Classification()
+data class Classification(
+    val name: String,
+    val score: Float
+)
