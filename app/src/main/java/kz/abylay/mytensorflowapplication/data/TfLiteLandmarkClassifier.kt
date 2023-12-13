@@ -14,7 +14,7 @@ import org.tensorflow.lite.task.vision.classifier.ImageClassifier
 class TfLiteLandmarkClassifier(
     private val context: Context,
     private val threshold: Float = 0.5f,
-    private val maxResults: Int = 3
+    private val maxResults: Int = 1
 ) : LandmarkClassifier {
 
     private var classifier: ImageClassifier? = null
@@ -23,6 +23,7 @@ class TfLiteLandmarkClassifier(
         val baseOptions = BaseOptions.builder()
             .setNumThreads(2)
             .build()
+
         val options = ImageClassifier.ImageClassifierOptions.builder()
             .setBaseOptions(baseOptions)
             .setMaxResults(maxResults)
